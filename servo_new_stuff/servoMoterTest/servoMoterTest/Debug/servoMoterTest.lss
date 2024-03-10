@@ -1,10 +1,10 @@
 
-AVRASM ver. 2.2.8  C:\Users\Mario\Desktop\Mini Project\Servo moter test\servoMoterTest\servoMoterTest\main.asm Wed Jan 03 20:38:31 2024
+AVRASM ver. 2.2.8  D:\Documents\ee322_project\servo_new_stuff\servoMoterTest\servoMoterTest\main.asm Sun Mar 10 22:59:21 2024
 
 [builtin](2): Including file 'E:/Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\avrasm\inc\m328Pdef.inc'
-C:\Users\Mario\Desktop\Mini Project\Servo moter test\servoMoterTest\servoMoterTest\main.asm(9): Including file 'E:/Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\avrasm\inc\M328PDEF.INC'
+D:\Documents\ee322_project\servo_new_stuff\servoMoterTest\servoMoterTest\main.asm(9): Including file 'E:/Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\avrasm\inc\M328PDEF.INC'
 [builtin](2): Including file 'E:/Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\avrasm\inc\m328Pdef.inc'
-C:\Users\Mario\Desktop\Mini Project\Servo moter test\servoMoterTest\servoMoterTest\main.asm(9): Including file 'E:/Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\avrasm\inc\M328PDEF.INC'
+D:\Documents\ee322_project\servo_new_stuff\servoMoterTest\servoMoterTest\main.asm(9): Including file 'E:/Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\avrasm\inc\M328PDEF.INC'
                                  
                                  ;------------------------
                                  
@@ -1142,9 +1142,9 @@ C:\Users\Mario\Desktop\Mini Project\Servo moter test\servoMoterTest\servoMoterTe
                                  ;===============================================================
                                  delay_ms:                 ;delay 0.5s
 000025 ef5f                          LDI   R21, 255
-000026 ef6f                      l7 :LDI   R22, 255
-000027 e279                      l8 :LDI   R23, 41
-000028 957a                      l9 :DEC   R23
+000026 ef6f                      l7: LDI   R22, 255
+000027 e279                      l8: LDI   R23, 41
+000028 957a                      l9: DEC   R23
 000029 f7f1                          BRNE  l9
 00002a 956a                          DEC   R22
 00002b f7d9                          BRNE  l8

@@ -1,0 +1,33 @@
+<ASSEMBLER_INFO>
+ <VERSION>2.2.8</VERSION>
+ <DEVICE>"ATmega328P"</DEVICE>
+ <WORKING_DIR>D:\Documents\ee322_project\ultrasonic\ultrasonic_test\ultrasonic_test\Debug</WORKING_DIR>
+ <INCLUDE_PATH>
+  <DIR>E:/Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\avrasm\inc</DIR>
+  <DIR>E:\Atmel\Studio\7.0\toolchain\avr8\avrassembler\Include</DIR>
+  <DIR></DIR>
+ </INCLUDE_PATH>
+ <SOURCE_FILE>D:\Documents\ee322_project\ultrasonic\ultrasonic_test\ultrasonic_test\main.asm</SOURCE_FILE>
+ <INCLUDED_FILES>
+  <FILE>E:/Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\avrasm\inc\m328Pdef.inc</FILE>
+  <FILE>E:/Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\avrasm\inc\m328pdef.inc</FILE>
+ </INCLUDED_FILES>
+ <OBJECT_FILES>
+  <FILE>D:\Documents\ee322_project\ultrasonic\ultrasonic_test\ultrasonic_test\Debug\ultrasonic_test.obj</FILE>
+ </OBJECT_FILES>
+ <HEX_FILES>
+  <FILE>ultrasonic_test.hex</FILE>
+ </HEX_FILES>
+ <OUTPUT_FILES>
+  <FILE>ultrasonic_test.map</FILE>
+  <FILE>ultrasonic_test.lss</FILE>
+ </OUTPUT_FILES>
+ <LABELS>
+  <agn><FILE>D:\Documents\ee322_project\ultrasonic\ultrasonic_test\ultrasonic_test\main.asm</FILE><LINE>18</LINE></agn>
+  <delay_timer0><FILE>D:\Documents\ee322_project\ultrasonic\ultrasonic_test\ultrasonic_test\main.asm</FILE><LINE>51</LINE></delay_timer0>
+  <echo_PW><FILE>D:\Documents\ee322_project\ultrasonic\ultrasonic_test\ultrasonic_test\main.asm</FILE><LINE>24</LINE></echo_PW>
+  <l1><FILE>D:\Documents\ee322_project\ultrasonic\ultrasonic_test\ultrasonic_test\main.asm</FILE><LINE>31</LINE></l1>
+  <l2><FILE>D:\Documents\ee322_project\ultrasonic\ultrasonic_test\ultrasonic_test\main.asm</FILE><LINE>41</LINE></l2>
+  <l0><FILE>D:\Documents\ee322_project\ultrasonic\ultrasonic_test\ultrasonic_test\main.asm</FILE><LINE>60</LINE></l0>
+ </LABELS>
+</ASSEMBLER_INFO>
