@@ -14,20 +14,11 @@
 servo_motor:
 ;-----------
     SBI   DDRB, 4         ;pin PB4 o/p for servo control
-    ;SBI   DDRB, 0         ;PB0 o/p, red LED: pos 0 deg
-    ;SBI   DDRB, 1         ;PB1 o/p, green LED: pos 90 deg
-    ;SBI   DDRB, 2         ;PB2 o/p, blue LED: pos 180 deg
+
 ;---------------------------------------------------------------
-again:     
-    ;LDI   R25, 1          ;counter for LED control
-    ;LDI   R26, 8          ;counter for # of rotation pos
-    ;LDI   ZL, LOW(rotate_pos)
-    ;LDI   ZH, HIGH(rotate_pos)
-    ;-----------------------------------------------------------
+
 l1: LDI   R24, 70         ;load rotation pos
     RCALL rotate_servo    ;& rotate servo
-    ;DEC   R26
-    ;BRNE  l1              ;go back & get another rotate pos
     ;-----------------------------------------------------------
     RJMP  l1           ;go back & repeat
 ;---------------------------------------------------------------
@@ -42,38 +33,11 @@ l2: SBI   PORTB, 4
     DEC   R20
     BRNE  l2              ;go back & repeat PWM signal
     ;-----------------------------------------------------------
-    ;CPI   R25, 1
-    ;BREQ  red_LED         ;if pos 0 deg, turn ON red LED
-    ;CPI   R25, 3
-    ;BREQ  green_LED       ;if pos 90 deg, turn ON green LED
-    ;CPI   R25, 5
-    ;BREQ  blue_LED        ;if pos 180 deg, turn ON blue LED
-    ;CPI   R25, 7
-    ;BREQ  green_LED       ;if pos 90 deg, turn ON green LED
+
 bak:RCALL delay_ms        ;0.5s delay
-    ;CBI   PORTB, 0
-    ;CBI   PORTB, 1
-    ;CBI   PORTB, 2        ;turn OFF all LEDs
-    ;INC   R25
     RET                   ;& return to main subroutine
 ;-------------------
-red_LED:                  ;subroutine to turn ON red LED
-    ;SBI   PORTB, 0
-    ;CBI   PORTB, 1
-    ;CBI   PORTB, 2
-    ;RJMP  bak
-;------------------
-green_LED:                ;subroutine to turn ON green LED
-    ;CBI   PORTB, 0
-    ;SBI   PORTB, 1
-    ;CBI   PORTB, 2
-    ;RJMP  bak
-;------------------
-blue_LED:                 ;subroutine to turn ON blue LED
-    ;CBI   PORTB, 0
-    ;CBI   PORTB, 1
-    ;SBI   PORTB, 2
-    ;RJMP  bak
+
 ;===============================================================
 ;delay subroutines
 ;===============================================================
