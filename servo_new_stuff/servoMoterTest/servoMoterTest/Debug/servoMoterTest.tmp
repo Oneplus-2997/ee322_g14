@@ -24,23 +24,19 @@
  </OUTPUT_FILES>
  <LABELS>
   <servo_motor><FILE>D:\Documents\ee322_project\servo_new_stuff\servoMoterTest\servoMoterTest\main.asm</FILE><LINE>14</LINE></servo_motor>
-  <again><FILE>D:\Documents\ee322_project\servo_new_stuff\servoMoterTest\servoMoterTest\main.asm</FILE><LINE>21</LINE></again>
-  <l1><FILE>D:\Documents\ee322_project\servo_new_stuff\servoMoterTest\servoMoterTest\main.asm</FILE><LINE>27</LINE></l1>
-  <rotate_servo><FILE>D:\Documents\ee322_project\servo_new_stuff\servoMoterTest\servoMoterTest\main.asm</FILE><LINE>35</LINE></rotate_servo>
-  <l2><FILE>D:\Documents\ee322_project\servo_new_stuff\servoMoterTest\servoMoterTest\main.asm</FILE><LINE>38</LINE></l2>
-  <delay_timer0><FILE>D:\Documents\ee322_project\servo_new_stuff\servoMoterTest\servoMoterTest\main.asm</FILE><LINE>80</LINE></delay_timer0>
-  <delay_20ms><FILE>D:\Documents\ee322_project\servo_new_stuff\servoMoterTest\servoMoterTest\main.asm</FILE><LINE>100</LINE></delay_20ms>
-  <bak><FILE>D:\Documents\ee322_project\servo_new_stuff\servoMoterTest\servoMoterTest\main.asm</FILE><LINE>53</LINE></bak>
-  <delay_ms><FILE>D:\Documents\ee322_project\servo_new_stuff\servoMoterTest\servoMoterTest\main.asm</FILE><LINE>112</LINE></delay_ms>
-  <red_LED><FILE>D:\Documents\ee322_project\servo_new_stuff\servoMoterTest\servoMoterTest\main.asm</FILE><LINE>60</LINE></red_LED>
-  <green_LED><FILE>D:\Documents\ee322_project\servo_new_stuff\servoMoterTest\servoMoterTest\main.asm</FILE><LINE>66</LINE></green_LED>
-  <blue_LED><FILE>D:\Documents\ee322_project\servo_new_stuff\servoMoterTest\servoMoterTest\main.asm</FILE><LINE>72</LINE></blue_LED>
-  <l3><FILE>D:\Documents\ee322_project\servo_new_stuff\servoMoterTest\servoMoterTest\main.asm</FILE><LINE>89</LINE></l3>
-  <l4><FILE>D:\Documents\ee322_project\servo_new_stuff\servoMoterTest\servoMoterTest\main.asm</FILE><LINE>102</LINE></l4>
-  <l5><FILE>D:\Documents\ee322_project\servo_new_stuff\servoMoterTest\servoMoterTest\main.asm</FILE><LINE>103</LINE></l5>
-  <l6><FILE>D:\Documents\ee322_project\servo_new_stuff\servoMoterTest\servoMoterTest\main.asm</FILE><LINE>104</LINE></l6>
-  <l7><FILE>D:\Documents\ee322_project\servo_new_stuff\servoMoterTest\servoMoterTest\main.asm</FILE><LINE>114</LINE></l7>
-  <l8><FILE>D:\Documents\ee322_project\servo_new_stuff\servoMoterTest\servoMoterTest\main.asm</FILE><LINE>115</LINE></l8>
-  <l9><FILE>D:\Documents\ee322_project\servo_new_stuff\servoMoterTest\servoMoterTest\main.asm</FILE><LINE>116</LINE></l9>
+  <l1><FILE>D:\Documents\ee322_project\servo_new_stuff\servoMoterTest\servoMoterTest\main.asm</FILE><LINE>20</LINE></l1>
+  <rotate_servo><FILE>D:\Documents\ee322_project\servo_new_stuff\servoMoterTest\servoMoterTest\main.asm</FILE><LINE>26</LINE></rotate_servo>
+  <l2><FILE>D:\Documents\ee322_project\servo_new_stuff\servoMoterTest\servoMoterTest\main.asm</FILE><LINE>29</LINE></l2>
+  <delay_timer0><FILE>D:\Documents\ee322_project\servo_new_stuff\servoMoterTest\servoMoterTest\main.asm</FILE><LINE>44</LINE></delay_timer0>
+  <delay_20ms><FILE>D:\Documents\ee322_project\servo_new_stuff\servoMoterTest\servoMoterTest\main.asm</FILE><LINE>64</LINE></delay_20ms>
+  <bak><FILE>D:\Documents\ee322_project\servo_new_stuff\servoMoterTest\servoMoterTest\main.asm</FILE><LINE>37</LINE></bak>
+  <delay_ms><FILE>D:\Documents\ee322_project\servo_new_stuff\servoMoterTest\servoMoterTest\main.asm</FILE><LINE>76</LINE></delay_ms>
+  <l3><FILE>D:\Documents\ee322_project\servo_new_stuff\servoMoterTest\servoMoterTest\main.asm</FILE><LINE>53</LINE></l3>
+  <l4><FILE>D:\Documents\ee322_project\servo_new_stuff\servoMoterTest\servoMoterTest\main.asm</FILE><LINE>66</LINE></l4>
+  <l5><FILE>D:\Documents\ee322_project\servo_new_stuff\servoMoterTest\servoMoterTest\main.asm</FILE><LINE>67</LINE></l5>
+  <l6><FILE>D:\Documents\ee322_project\servo_new_stuff\servoMoterTest\servoMoterTest\main.asm</FILE><LINE>68</LINE></l6>
+  <l7><FILE>D:\Documents\ee322_project\servo_new_stuff\servoMoterTest\servoMoterTest\main.asm</FILE><LINE>78</LINE></l7>
+  <l8><FILE>D:\Documents\ee322_project\servo_new_stuff\servoMoterTest\servoMoterTest\main.asm</FILE><LINE>79</LINE></l8>
+  <l9><FILE>D:\Documents\ee322_project\servo_new_stuff\servoMoterTest\servoMoterTest\main.asm</FILE><LINE>80</LINE></l9>
  </LABELS>
 </ASSEMBLER_INFO>

@@ -1,5 +1,5 @@
 
-AVRASM ver. 2.2.8  D:\Documents\ee322_project\servo_new_stuff\servoMoterTest\servoMoterTest\main.asm Sun Mar 10 22:59:21 2024
+AVRASM ver. 2.2.8  D:\Documents\ee322_project\servo_new_stuff\servoMoterTest\servoMoterTest\main.asm Sun Mar 10 23:12:09 2024
 
 
 EQU  SIGNATURE_000 0000001e
@@ -696,7 +696,6 @@ EQU  TWIaddr      00000030
 EQU  SPMRaddr     00000032
 EQU  INT_VECTORS_SIZE 00000034
 CSEG servo_motor  00000000
-CSEG again        00000001
 CSEG l1           00000001
 CSEG rotate_servo 00000004
 CSEG l2           00000005
@@ -704,9 +703,6 @@ CSEG delay_timer0 0000000d
 CSEG delay_20ms   0000001b
 CSEG bak          0000000b
 CSEG delay_ms     00000025
-CSEG red_LED      0000000d
-CSEG green_LED    0000000d
-CSEG blue_LED     0000000d
 CSEG l3           00000013
 CSEG l4           0000001c
 CSEG l5           0000001d
