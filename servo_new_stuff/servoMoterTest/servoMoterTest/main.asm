@@ -111,9 +111,9 @@ l6: DEC   R23
 ;===============================================================
 delay_ms:                 ;delay 0.5s
     LDI   R21, 255
-l7 :LDI   R22, 255
-l8 :LDI   R23, 41
-l9 :DEC   R23
+l7: LDI   R22, 255
+l8: LDI   R23, 41
+l9: DEC   R23
     BRNE  l9
     DEC   R22
     BRNE  l8
