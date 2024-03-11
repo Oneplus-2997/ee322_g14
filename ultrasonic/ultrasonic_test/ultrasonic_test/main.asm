@@ -48,7 +48,7 @@ lb: IN    R21, TIFR1
     ;*****not sure why we should have this line OUT   TIFR1, R21      ;clear flag for next sensor reading
     RET
 
-delay_timer1:             ;10 usec delay via Timer 0
+delay_timer1:             ;10 usec delay via Timer 1
 ;------------
     CLR   R22
     OUT   TCNT0, R22      ;initialize timer0 with count=0
@@ -62,7 +62,7 @@ lc: IN    R22, TIFR0      ;get TIFR0 byte & check
     RJMP  lc              ;else, loop back & check OCF0 flag
     ;-----------------------------------------------------------
     CLR   R22
-    OUT   TCCR0B, R22     ;stop timer0
+    OUT   TCCR0B, R22     ;stop timer1
     ;-----------------------------------------------------------
     LDI   R22, (1<<OCF0A)
     OUT   TIFR0, R22      ;clear OCF0 flag
