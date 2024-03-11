@@ -16,7 +16,7 @@
     CBI   DDRB, 0         ;pin PB0 as i/p (Echo)
     ;-----------------------------------------------------------
 agn:SBI   PORTB, 1
-    RCALL delay_timer0
+    RCALL delay_timer1
     CBI   PORTB, 1        ;send 10us high pulse to sensor
     ;-----------------------------------------------------------
     RCALL echo_PW			;compute Echo pulse width count
@@ -28,9 +28,9 @@ echo_PW:
     LDI   R20, 0b11000101 ;set for rising edge detection &
     STS   TCCR1B, R20     ;prescaler=1024, noise cancellation ON
 
-l1: IN    R21, TIFR1
+la: IN    R21, TIFR1
     SBRS  R21, ICF1
-    RJMP  l1              ;loop until rising edge is detected
+    RJMP  la              ;loop until rising edge is detected
     ;-----------------------------------------------------------
     LDS   R16, ICR1L      ;store count value at rising edge
     ;-----------------------------------------------------------
@@ -38,9 +38,9 @@ l1: IN    R21, TIFR1
     LDI   R20, 0b10000101
     STS   TCCR1B, R20     ;set for falling edge detection
     ;-----------------------------------------------------------
-l2: IN    R21, TIFR1
+lb: IN    R21, TIFR1
     SBRS  R21, ICF1
-    RJMP  l2              ;loop until falling edge is detected
+    RJMP  lb              ;loop until falling edge is detected
     ;-----------------------------------------------------------
     LDS   R28, ICR1L      ;store count value at falling edge
     ;-----------------------------------------------------------
@@ -48,7 +48,7 @@ l2: IN    R21, TIFR1
     ;*****not sure why we should have this line OUT   TIFR1, R21      ;clear flag for next sensor reading
     RET
 
-delay_timer0:             ;10 usec delay via Timer 0
+delay_timer1:             ;10 usec delay via Timer 0
 ;------------
     CLR   R20
     OUT   TCNT0, R20      ;initialize timer0 with count=0
@@ -57,9 +57,9 @@ delay_timer0:             ;10 usec delay via Timer 0
     LDI   R20, 0b00001010
     OUT   TCCR0B, R20     ;timer0: CTC mode, prescaler 8
     ;-----------------------------------------------------------
-l0: IN    R20, TIFR0      ;get TIFR0 byte & check
+lc: IN    R20, TIFR0      ;get TIFR0 byte & check
     SBRS  R20, OCF0A      ;if OCF0=1, skip next instruction
-    RJMP  l0              ;else, loop back & check OCF0 flag
+    RJMP  lc              ;else, loop back & check OCF0 flag
     ;-----------------------------------------------------------
     CLR   R20
     OUT   TCCR0B, R20     ;stop timer0
