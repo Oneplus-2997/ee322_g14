@@ -17,7 +17,7 @@ servo_motor:
 
 ;---------------------------------------------------------------
 
-l1: LDI   R24, 70         ;load rotation pos
+l1: LDI   R16, 70         ;load rotation pos
     RCALL rotate_servo    ;& rotate servo
     ;-----------------------------------------------------------
     RJMP  l1           ;go back & repeat
@@ -25,12 +25,12 @@ l1: LDI   R24, 70         ;load rotation pos
 
 rotate_servo:
 ;------------
-    LDI   R20, 10         ;count to give enough cycles of PWM
+    LDI   R17, 10         ;count to give enough cycles of PWM
 l2: SBI   PORTB, 4
     RCALL delay_timer0
     CBI   PORTB, 4        ;send msec pulse to rotate servo
     RCALL delay_20ms      ;wait 20ms before re-sending pulse
-    DEC   R20
+    DEC   R17
     BRNE  l2              ;go back & repeat PWM signal
     ;-----------------------------------------------------------
 
@@ -43,44 +43,44 @@ bak:RCALL delay_ms        ;0.5s delay
 ;===============================================================
 delay_timer0:             ;delay via Timer0
     ;-----------------------------------------------------------
-    CLR   R21
-    OUT   TCNT0, R21      ;initialize timer0 with count=0
-    MOV   R21, R24
-    OUT   OCR0A, R21
-    LDI   R21, 0b00001100
-    OUT   TCCR0B, R21     ;timer0: CTC mode, prescaler 256
+    CLR   R18
+    OUT   TCNT0, R18      ;initialize timer0 with count=0
+    MOV   R18, R16
+    OUT   OCR0A, R18
+    LDI   R18, 0b00001100
+    OUT   TCCR0B, R18     ;timer0: CTC mode, prescaler 256
     ;-----------------------------------------------------------
-l3: IN    R21, TIFR0      ;get TIFR0 byte & check
-    SBRS  R21, OCF0A      ;if OCF0=1, skip next instruction
+l3: IN    R18, TIFR0      ;get TIFR0 byte & check
+    SBRS  R18, OCF0A      ;if OCF0=1, skip next instruction
     RJMP  l3              ;else, loop back & check OCF0 flag
     ;-----------------------------------------------------------
-    CLR   R21
-    OUT   TCCR0B, R21     ;stop timer0
+    CLR   R18
+    OUT   TCCR0B, R18     ;stop timer0
     ;-----------------------------------------------------------
-    LDI   R21, (1<<OCF0A)
-    OUT   TIFR0, R21      ;clear OCF0 flag
+    LDI   R18, (1<<OCF0A)
+    OUT   TIFR0, R18      ;clear OCF0 flag
     RET
 ;===============================================================
 delay_20ms:               ;delay 20ms
-    LDI   R21, 255
-l4: LDI   R22, 210
-l5: LDI   R23, 2
-l6: DEC   R23
+    LDI   R18, 255
+l4: LDI   R19, 210
+l5: LDI   R20, 2
+l6: DEC   R20
     BRNE  l6
-    DEC   R22
+    DEC   R19
     BRNE  l5
-    DEC   R21
+    DEC   R18
     BRNE  l4
     RET
 ;===============================================================
 delay_ms:                 ;delay 0.5s
-    LDI   R21, 255
-l7: LDI   R22, 255
-l8: LDI   R23, 41
-l9: DEC   R23
+    LDI   R18, 255
+l7: LDI   R19, 255
+l8: LDI   R20, 41
+l9: DEC   R20
     BRNE  l9
-    DEC   R22
+    DEC   R19
     BRNE  l8
-    DEC   R21
+    DEC   R18
     BRNE  l7
     RET

@@ -1,5 +1,5 @@
 
-AVRASM ver. 2.2.8  D:\Documents\ee322_project\servo_new_stuff\servoMoterTest\servoMoterTest\main.asm Sun Mar 10 23:12:09 2024
+AVRASM ver. 2.2.8  D:\Documents\ee322_project\servo_new_stuff\servoMoterTest\servoMoterTest\main.asm Mon Mar 11 06:20:43 2024
 
 [builtin](2): Including file 'E:/Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\avrasm\inc\m328Pdef.inc'
 D:\Documents\ee322_project\servo_new_stuff\servoMoterTest\servoMoterTest\main.asm(9): Including file 'E:/Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\avrasm\inc\M328PDEF.INC'
@@ -1048,7 +1048,7 @@ D:\Documents\ee322_project\servo_new_stuff\servoMoterTest\servoMoterTest\main.as
                                  
                                  ;---------------------------------------------------------------
                                  
-000001 e486                      l1: LDI   R24, 70         ;load rotation pos
+000001 e406                      l1: LDI   R16, 70         ;load rotation pos
 000002 d001                          RCALL rotate_servo    ;& rotate servo
                                      ;-----------------------------------------------------------
 000003 cffd                          RJMP  l1           ;go back & repeat
@@ -1056,12 +1056,12 @@ D:\Documents\ee322_project\servo_new_stuff\servoMoterTest\servoMoterTest\main.as
                                  
                                  rotate_servo:
                                  ;------------
-000004 e04a                          LDI   R20, 10         ;count to give enough cycles of PWM
+000004 e01a                          LDI   R17, 10         ;count to give enough cycles of PWM
 000005 9a2c                      l2: SBI   PORTB, 4
 000006 d006                          RCALL delay_timer0
 000007 982c                          CBI   PORTB, 4        ;send msec pulse to rotate servo
 000008 d012                          RCALL delay_20ms      ;wait 20ms before re-sending pulse
-000009 954a                          DEC   R20
+000009 951a                          DEC   R17
 00000a f7d1                          BRNE  l2              ;go back & repeat PWM signal
                                      ;-----------------------------------------------------------
                                  
@@ -1074,45 +1074,45 @@ D:\Documents\ee322_project\servo_new_stuff\servoMoterTest\servoMoterTest\main.as
                                  ;===============================================================
                                  delay_timer0:             ;delay via Timer0
                                      ;-----------------------------------------------------------
-00000d 2755                          CLR   R21
-00000e bd56                          OUT   TCNT0, R21      ;initialize timer0 with count=0
-00000f 2f58                          MOV   R21, R24
-000010 bd57                          OUT   OCR0A, R21
-000011 e05c                          LDI   R21, 0b00001100
-000012 bd55                          OUT   TCCR0B, R21     ;timer0: CTC mode, prescaler 256
+00000d 2722                          CLR   R18
+00000e bd26                          OUT   TCNT0, R18      ;initialize timer0 with count=0
+00000f 2f20                          MOV   R18, R16
+000010 bd27                          OUT   OCR0A, R18
+000011 e02c                          LDI   R18, 0b00001100
+000012 bd25                          OUT   TCCR0B, R18     ;timer0: CTC mode, prescaler 256
                                      ;-----------------------------------------------------------
-000013 b355                      l3: IN    R21, TIFR0      ;get TIFR0 byte & check
-000014 ff51                          SBRS  R21, OCF0A      ;if OCF0=1, skip next instruction
+000013 b325                      l3: IN    R18, TIFR0      ;get TIFR0 byte & check
+000014 ff21                          SBRS  R18, OCF0A      ;if OCF0=1, skip next instruction
 000015 cffd                          RJMP  l3              ;else, loop back & check OCF0 flag
                                      ;-----------------------------------------------------------
-000016 2755                          CLR   R21
-000017 bd55                          OUT   TCCR0B, R21     ;stop timer0
+000016 2722                          CLR   R18
+000017 bd25                          OUT   TCCR0B, R18     ;stop timer0
                                      ;-----------------------------------------------------------
-000018 e052                          LDI   R21, (1<<OCF0A)
-000019 bb55                          OUT   TIFR0, R21      ;clear OCF0 flag
+000018 e022                          LDI   R18, (1<<OCF0A)
+000019 bb25                          OUT   TIFR0, R18      ;clear OCF0 flag
 00001a 9508                          RET
                                  ;===============================================================
                                  delay_20ms:               ;delay 20ms
-00001b ef5f                          LDI   R21, 255
-00001c ed62                      l4: LDI   R22, 210
-00001d e072                      l5: LDI   R23, 2
-00001e 957a                      l6: DEC   R23
+00001b ef2f                          LDI   R18, 255
+00001c ed32                      l4: LDI   R19, 210
+00001d e042                      l5: LDI   R20, 2
+00001e 954a                      l6: DEC   R20
 00001f f7f1                          BRNE  l6
-000020 956a                          DEC   R22
+000020 953a                          DEC   R19
 000021 f7d9                          BRNE  l5
-000022 955a                          DEC   R21
+000022 952a                          DEC   R18
 000023 f7c1                          BRNE  l4
 000024 9508                          RET
                                  ;===============================================================
                                  delay_ms:                 ;delay 0.5s
-000025 ef5f                          LDI   R21, 255
-000026 ef6f                      l7: LDI   R22, 255
-000027 e279                      l8: LDI   R23, 41
-000028 957a                      l9: DEC   R23
+000025 ef2f                          LDI   R18, 255
+000026 ef3f                      l7: LDI   R19, 255
+000027 e249                      l8: LDI   R20, 41
+000028 954a                      l9: DEC   R20
 000029 f7f1                          BRNE  l9
-00002a 956a                          DEC   R22
+00002a 953a                          DEC   R19
 00002b f7d9                          BRNE  l8
-00002c 955a                          DEC   R21
+00002c 952a                          DEC   R18
 00002d f7c1                          BRNE  l7
 
 
@@ -1133,8 +1133,8 @@ counted separately from r26..r31 here.
 "ATmega328P" register use summary:
 x  :   0 y  :   0 z  :   0 r0 :   0 r1 :   0 r2 :   0 r3 :   0 r4 :   0 
 r5 :   0 r6 :   0 r7 :   0 r8 :   0 r9 :   0 r10:   0 r11:   0 r12:   0 
-r13:   0 r14:   0 r15:   0 r16:   0 r17:   0 r18:   0 r19:   0 r20:   2 
-r21:  16 r22:   4 r23:   4 r24:   2 r25:   0 r26:   0 r27:   0 r28:   0 
+r13:   0 r14:   0 r15:   0 r16:   2 r17:   2 r18:  16 r19:   4 r20:   4 
+r21:   0 r22:   0 r23:   0 r24:   0 r25:   0 r26:   0 r27:   0 r28:   0 
 r29:   0 r30:   0 r31:   0 
 Registers used: 5 out of 35 (14.3%)
 

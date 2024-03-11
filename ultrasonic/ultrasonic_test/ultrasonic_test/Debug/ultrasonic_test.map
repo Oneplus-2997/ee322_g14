@@ -1,5 +1,5 @@
 
-AVRASM ver. 2.2.8  D:\Documents\ee322_project\ultrasonic\ultrasonic_test\ultrasonic_test\main.asm Sun Mar 10 22:59:39 2024
+AVRASM ver. 2.2.8  D:\Documents\ee322_project\ultrasonic\ultrasonic_test\ultrasonic_test\main.asm Mon Mar 11 06:21:05 2024
 
 
 EQU  SIGNATURE_000 0000001e
@@ -696,8 +696,8 @@ EQU  TWIaddr      00000030
 EQU  SPMRaddr     00000032
 EQU  INT_VECTORS_SIZE 00000034
 CSEG agn          00000002
-CSEG delay_timer0 0000001b
+CSEG delay_timer1 0000001b
 CSEG echo_PW      00000006
-CSEG l1           0000000c
-CSEG l2           00000014
-CSEG l0           00000021
+CSEG la           0000000c
+CSEG lb           00000014
+CSEG lc           00000021

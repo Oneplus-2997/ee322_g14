@@ -1,5 +1,5 @@
 
-AVRASM ver. 2.2.8  D:\Documents\ee322_project\ultrasonic\ultrasonic_test\ultrasonic_test\main.asm Sun Mar 10 22:59:39 2024
+AVRASM ver. 2.2.8  D:\Documents\ee322_project\ultrasonic\ultrasonic_test\ultrasonic_test\main.asm Mon Mar 11 06:21:05 2024
 
 [builtin](2): Including file 'E:/Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\avrasm\inc\m328Pdef.inc'
 D:\Documents\ee322_project\ultrasonic\ultrasonic_test\ultrasonic_test\main.asm(9): Including file 'E:/Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\avrasm\inc\m328pdef.inc'
@@ -1047,31 +1047,31 @@ D:\Documents\ee322_project\ultrasonic\ultrasonic_test\ultrasonic_test\main.asm(9
 000001 9820                          CBI   DDRB, 0         ;pin PB0 as i/p (Echo)
                                      ;-----------------------------------------------------------
 000002 9a29                      agn:SBI   PORTB, 1
-000003 d017                          RCALL delay_timer0
+000003 d017                          RCALL delay_timer1
 000004 9829                          CBI   PORTB, 1        ;send 10us high pulse to sensor
                                      ;-----------------------------------------------------------
 000005 d000                          RCALL echo_PW			;compute Echo pulse width count
                                  
                                  echo_PW:
                                  ;-------
-000006 e040                          LDI   R20, 0b00000000
-000007 9340 0080                     STS   TCCR1A, R20     ;Timer 1 normal mode
-000009 ec45                          LDI   R20, 0b11000101 ;set for rising edge detection &
-00000a 9340 0081                     STS   TCCR1B, R20     ;prescaler=1024, noise cancellation ON
+000006 e060                          LDI   R22, 0b00000000
+000007 9360 0080                     STS   TCCR1A, R22     ;Timer 1 normal mode
+000009 ec65                          LDI   R22, 0b11000101 ;set for rising edge detection &
+00000a 9360 0081                     STS   TCCR1B, R22     ;prescaler=1024, noise cancellation ON
                                  
-00000c b356                      l1: IN    R21, TIFR1
+00000c b356                      la: IN    R21, TIFR1
 00000d ff55                          SBRS  R21, ICF1
-00000e cffd                          RJMP  l1              ;loop until rising edge is detected
+00000e cffd                          RJMP  la              ;loop until rising edge is detected
                                      ;-----------------------------------------------------------
 00000f 9100 0086                     LDS   R16, ICR1L      ;store count value at rising edge
                                      ;-----------------------------------------------------------
                                      ;*****not sure why we should have this line OUT   TIFR1, R21      ;clear flag for falling edge detection
-000011 e845                          LDI   R20, 0b10000101
-000012 9340 0081                     STS   TCCR1B, R20     ;set for falling edge detection
+000011 e865                          LDI   R22, 0b10000101
+000012 9360 0081                     STS   TCCR1B, R22     ;set for falling edge detection
                                      ;-----------------------------------------------------------
-000014 b356                      l2: IN    R21, TIFR1
+000014 b356                      lb: IN    R21, TIFR1
 000015 ff55                          SBRS  R21, ICF1
-000016 cffd                          RJMP  l2              ;loop until falling edge is detected
+000016 cffd                          RJMP  lb              ;loop until falling edge is detected
                                      ;-----------------------------------------------------------
 000017 91c0 0086                     LDS   R28, ICR1L      ;store count value at falling edge
                                      ;-----------------------------------------------------------
@@ -1079,24 +1079,24 @@ D:\Documents\ee322_project\ultrasonic\ultrasonic_test\ultrasonic_test\main.asm(9
                                      ;*****not sure why we should have this line OUT   TIFR1, R21      ;clear flag for next sensor reading
 00001a 9508                          RET
                                  
-                                 delay_timer0:             ;10 usec delay via Timer 0
+                                 delay_timer1:             ;10 usec delay via Timer 0
                                  ;------------
-00001b 2744                          CLR   R20
-00001c bd46                          OUT   TCNT0, R20      ;initialize timer0 with count=0
-00001d e144                          LDI   R20, 20
-00001e bd47                          OUT   OCR0A, R20      ;OCR0 = 20
-00001f e04a                          LDI   R20, 0b00001010
-000020 bd45                          OUT   TCCR0B, R20     ;timer0: CTC mode, prescaler 8
+00001b 2766                          CLR   R22
+00001c bd66                          OUT   TCNT0, R22      ;initialize timer0 with count=0
+00001d e164                          LDI   R22, 20
+00001e bd67                          OUT   OCR0A, R22      ;OCR0 = 20
+00001f e06a                          LDI   R22, 0b00001010
+000020 bd65                          OUT   TCCR0B, R22     ;timer0: CTC mode, prescaler 8
                                      ;-----------------------------------------------------------
-000021 b345                      l0: IN    R20, TIFR0      ;get TIFR0 byte & check
-000022 ff41                          SBRS  R20, OCF0A      ;if OCF0=1, skip next instruction
-000023 cffd                          RJMP  l0              ;else, loop back & check OCF0 flag
+000021 b365                      lc: IN    R22, TIFR0      ;get TIFR0 byte & check
+000022 ff61                          SBRS  R22, OCF0A      ;if OCF0=1, skip next instruction
+000023 cffd                          RJMP  lc              ;else, loop back & check OCF0 flag
                                      ;-----------------------------------------------------------
-000024 2744                          CLR   R20
-000025 bd45                          OUT   TCCR0B, R20     ;stop timer0
+000024 2766                          CLR   R22
+000025 bd65                          OUT   TCCR0B, R22     ;stop timer0
                                      ;-----------------------------------------------------------
-000026 e042                          LDI   R20, (1<<OCF0A)
-000027 bb45                          OUT   TIFR0, R20      ;clear OCF0 flag
+000026 e062                          LDI   R22, (1<<OCF0A)
+000027 bb65                          OUT   TIFR0, R22      ;clear OCF0 flag
 
 
 RESOURCE USE INFORMATION
@@ -1116,8 +1116,8 @@ counted separately from r26..r31 here.
 "ATmega328P" register use summary:
 x  :   0 y  :   0 z  :   0 r0 :   0 r1 :   0 r2 :   0 r3 :   0 r4 :   0 
 r5 :   0 r6 :   0 r7 :   0 r8 :   0 r9 :   0 r10:   0 r11:   0 r12:   0 
-r13:   0 r14:   0 r15:   0 r16:   2 r17:   0 r18:   0 r19:   0 r20:  18 
-r21:   4 r22:   0 r23:   0 r24:   0 r25:   0 r26:   0 r27:   0 r28:   2 
+r13:   0 r14:   0 r15:   0 r16:   2 r17:   0 r18:   0 r19:   0 r20:   0 
+r21:   4 r22:  18 r23:   0 r24:   0 r25:   0 r26:   0 r27:   0 r28:   2 
 r29:   0 r30:   0 r31:   0 
 Registers used: 4 out of 35 (11.4%)
 

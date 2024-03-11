@@ -24,10 +24,10 @@
  </OUTPUT_FILES>
  <LABELS>
   <agn><FILE>D:\Documents\ee322_project\ultrasonic\ultrasonic_test\ultrasonic_test\main.asm</FILE><LINE>18</LINE></agn>
-  <delay_timer0><FILE>D:\Documents\ee322_project\ultrasonic\ultrasonic_test\ultrasonic_test\main.asm</FILE><LINE>51</LINE></delay_timer0>
+  <delay_timer1><FILE>D:\Documents\ee322_project\ultrasonic\ultrasonic_test\ultrasonic_test\main.asm</FILE><LINE>51</LINE></delay_timer1>
   <echo_PW><FILE>D:\Documents\ee322_project\ultrasonic\ultrasonic_test\ultrasonic_test\main.asm</FILE><LINE>24</LINE></echo_PW>
-  <l1><FILE>D:\Documents\ee322_project\ultrasonic\ultrasonic_test\ultrasonic_test\main.asm</FILE><LINE>31</LINE></l1>
-  <l2><FILE>D:\Documents\ee322_project\ultrasonic\ultrasonic_test\ultrasonic_test\main.asm</FILE><LINE>41</LINE></l2>
-  <l0><FILE>D:\Documents\ee322_project\ultrasonic\ultrasonic_test\ultrasonic_test\main.asm</FILE><LINE>60</LINE></l0>
+  <la><FILE>D:\Documents\ee322_project\ultrasonic\ultrasonic_test\ultrasonic_test\main.asm</FILE><LINE>31</LINE></la>
+  <lb><FILE>D:\Documents\ee322_project\ultrasonic\ultrasonic_test\ultrasonic_test\main.asm</FILE><LINE>41</LINE></lb>
+  <lc><FILE>D:\Documents\ee322_project\ultrasonic\ultrasonic_test\ultrasonic_test\main.asm</FILE><LINE>60</LINE></lc>
  </LABELS>
 </ASSEMBLER_INFO>

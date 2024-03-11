@@ -23,10 +23,10 @@ agn:SBI   PORTB, 1
 
 echo_PW:
 ;-------
-    LDI   R20, 0b00000000
-    STS   TCCR1A, R20     ;Timer 1 normal mode
-    LDI   R20, 0b11000101 ;set for rising edge detection &
-    STS   TCCR1B, R20     ;prescaler=1024, noise cancellation ON
+    LDI   R22, 0b00000000
+    STS   TCCR1A, R22     ;Timer 1 normal mode
+    LDI   R22, 0b11000101 ;set for rising edge detection &
+    STS   TCCR1B, R22     ;prescaler=1024, noise cancellation ON
 
 la: IN    R21, TIFR1
     SBRS  R21, ICF1
@@ -35,8 +35,8 @@ la: IN    R21, TIFR1
     LDS   R16, ICR1L      ;store count value at rising edge
     ;-----------------------------------------------------------
     ;*****not sure why we should have this line OUT   TIFR1, R21      ;clear flag for falling edge detection
-    LDI   R20, 0b10000101
-    STS   TCCR1B, R20     ;set for falling edge detection
+    LDI   R22, 0b10000101
+    STS   TCCR1B, R22     ;set for falling edge detection
     ;-----------------------------------------------------------
 lb: IN    R21, TIFR1
     SBRS  R21, ICF1
@@ -50,20 +50,20 @@ lb: IN    R21, TIFR1
 
 delay_timer1:             ;10 usec delay via Timer 0
 ;------------
-    CLR   R20
-    OUT   TCNT0, R20      ;initialize timer0 with count=0
-    LDI   R20, 20
-    OUT   OCR0A, R20      ;OCR0 = 20
-    LDI   R20, 0b00001010
-    OUT   TCCR0B, R20     ;timer0: CTC mode, prescaler 8
+    CLR   R22
+    OUT   TCNT0, R22      ;initialize timer0 with count=0
+    LDI   R22, 20
+    OUT   OCR0A, R22      ;OCR0 = 20
+    LDI   R22, 0b00001010
+    OUT   TCCR0B, R22     ;timer0: CTC mode, prescaler 8
     ;-----------------------------------------------------------
-lc: IN    R20, TIFR0      ;get TIFR0 byte & check
-    SBRS  R20, OCF0A      ;if OCF0=1, skip next instruction
+lc: IN    R22, TIFR0      ;get TIFR0 byte & check
+    SBRS  R22, OCF0A      ;if OCF0=1, skip next instruction
     RJMP  lc              ;else, loop back & check OCF0 flag
     ;-----------------------------------------------------------
-    CLR   R20
-    OUT   TCCR0B, R20     ;stop timer0
+    CLR   R22
+    OUT   TCCR0B, R22     ;stop timer0
     ;-----------------------------------------------------------
-    LDI   R20, (1<<OCF0A)
-    OUT   TIFR0, R20      ;clear OCF0 flag
+    LDI   R22, (1<<OCF0A)
+    OUT   TIFR0, R22      ;clear OCF0 flag
     RET
