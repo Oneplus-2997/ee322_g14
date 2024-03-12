@@ -74,7 +74,7 @@ neg_det:
 
 calc_val:       ;Speed Calculation
     MOV R21, R16
-    SUB R17, R17
+    SUB R17, R17        ;Get speed value based on distance time measurements
     LDI R18, 9
 d8u_1:
     ROL R16
