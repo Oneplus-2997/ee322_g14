@@ -12,8 +12,10 @@ rotate_pos:.DB 40,70,92,110,180,110,90,70
 .cseg
 
 setup:
-    LDI R16, 0b10000010
+    LDI R16, 0b10011100
     OUT DDRB, R16
+    LDI R16, 0b00000110
+    OUT DDRC, R16
     LDI R29, 0
     LDI R30, 0
     LDI R31, 0b00011110
@@ -67,8 +69,34 @@ neg_det:
 
     SUB R28, R16        ;count diff R28 = R28 - R16
     CP R28, R31
-    BRGE rev_dir
+    BRGE calc_val
     RJMP end_rot
+
+calc_val:       ;Speed Calculation
+    MOV R21, R16
+    SUB R17, R17
+    LDI R18, 9
+d8u_1:
+    ROL R16
+    DEC R18
+    BRNE d8u_2
+    RJMP out_val
+d8u_2:
+    ROL R17
+    SUB R17, R28
+    BRCC d8u_3
+    ADD R17, R28
+    CLC
+    RJMP d8u_1
+d8u_3:
+    SEC
+    RJMP d8u_1
+
+out_val:
+    OUT PORTC, R21
+    RCALL delay_20ms
+	OUT PORTC, R16
+    RJMP rev_dir
 
 rev_dir:
     CPI R30, 0
@@ -86,7 +114,9 @@ end_rot:
 
 rot_pos:
     DEC R26
-    BRNE rotate              ;go back & get another rotate pos
+    BRNE ret_rotate              ;go back & get another rotate pos
+ret_rotate:
+	RJMP rotate
     ;-----------------------------------------------------------
     RJMP again           ;go back & repeat
 ;--------------------------------------------
@@ -94,7 +124,7 @@ rot_pos:
 rot_neg:
     INC R26
     CPI R26, 8
-    BRNE rotate              ;go back & get another rotate pos
+    BRNE ret_rotate              ;go back & get another rotate pos
     ;-----------------------------------------------------------
     RJMP again           ;go back & repeat
 ;--------------------------------------------

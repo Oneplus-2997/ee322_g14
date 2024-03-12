@@ -1,5 +1,5 @@
 
-AVRASM ver. 2.2.8  D:\Documents\ee322_project\combined\combined_code\combined_code\main.asm Tue Mar 12 05:48:23 2024
+AVRASM ver. 2.2.8  D:\Documents\ee322_project\combined\combined_code\combined_code\main.asm Tue Mar 12 20:14:52 2024
 
 
 EQU  SIGNATURE_000 0000001e
@@ -697,29 +697,35 @@ EQU  SPMRaddr     00000032
 EQU  INT_VECTORS_SIZE 00000034
 CSEG rotate_pos   00000000
 CSEG setup        00000004
-CSEG again        00000009
-CSEG rotate       0000000c
-CSEG rotate_servo 0000003e
-CSEG loop         0000000f
-CSEG delay_timer1 00000069
-CSEG echo_PW      00000013
-CSEG neg_det      00000022
-CSEG pos_det      00000018
-CSEG end_rot      00000035
-CSEG rev_dir      0000002f
-CSEG rev_to_pos   00000033
-CSEG rot_neg      0000003a
-CSEG rot_pos      00000037
-CSEG l2           0000003f
-CSEG delay_timer0 00000047
-CSEG delay_20ms   00000055
-CSEG bak          00000045
-CSEG delay_ms     0000005f
-CSEG l3           0000004d
-CSEG l4           00000056
-CSEG l5           00000057
-CSEG l6           00000058
-CSEG l7           00000060
-CSEG l8           00000061
-CSEG l9           00000062
-CSEG lc           0000006f
+CSEG again        0000000b
+CSEG rotate       0000000e
+CSEG rotate_servo 00000054
+CSEG loop         00000011
+CSEG delay_timer1 0000007f
+CSEG echo_PW      00000015
+CSEG neg_det      00000024
+CSEG pos_det      0000001a
+CSEG end_rot      0000004a
+CSEG calc_val     00000031
+CSEG d8u_1        00000034
+CSEG d8u_2        00000038
+CSEG out_val      00000040
+CSEG d8u_3        0000003e
+CSEG delay_20ms   0000006b
+CSEG rev_dir      00000044
+CSEG rev_to_pos   00000048
+CSEG rot_neg      00000050
+CSEG rot_pos      0000004c
+CSEG ret_rotate   0000004e
+CSEG l2           00000055
+CSEG delay_timer0 0000005d
+CSEG bak          0000005b
+CSEG delay_ms     00000075
+CSEG l3           00000063
+CSEG l4           0000006c
+CSEG l5           0000006d
+CSEG l6           0000006e
+CSEG l7           00000076
+CSEG l8           00000077
+CSEG l9           00000078
+CSEG lc           00000085

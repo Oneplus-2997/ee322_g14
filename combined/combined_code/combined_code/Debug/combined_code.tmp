@@ -25,31 +25,37 @@
  <LABELS>
   <rotate_pos><FILE>D:\Documents\ee322_project\combined\combined_code\combined_code\main.asm</FILE><LINE>10</LINE></rotate_pos>
   <setup><FILE>D:\Documents\ee322_project\combined\combined_code\combined_code\main.asm</FILE><LINE>14</LINE></setup>
-  <again><FILE>D:\Documents\ee322_project\combined\combined_code\combined_code\main.asm</FILE><LINE>21</LINE></again>
-  <rotate><FILE>D:\Documents\ee322_project\combined\combined_code\combined_code\main.asm</FILE><LINE>26</LINE></rotate>
-  <rotate_servo><FILE>D:\Documents\ee322_project\combined\combined_code\combined_code\main.asm</FILE><LINE>105</LINE></rotate_servo>
-  <loop><FILE>D:\Documents\ee322_project\combined\combined_code\combined_code\main.asm</FILE><LINE>31</LINE></loop>
-  <delay_timer1><FILE>D:\Documents\ee322_project\combined\combined_code\combined_code\main.asm</FILE><LINE>167</LINE></delay_timer1>
-  <echo_PW><FILE>D:\Documents\ee322_project\combined\combined_code\combined_code\main.asm</FILE><LINE>38</LINE></echo_PW>
-  <neg_det><FILE>D:\Documents\ee322_project\combined\combined_code\combined_code\main.asm</FILE><LINE>57</LINE></neg_det>
-  <pos_det><FILE>D:\Documents\ee322_project\combined\combined_code\combined_code\main.asm</FILE><LINE>45</LINE></pos_det>
-  <end_rot><FILE>D:\Documents\ee322_project\combined\combined_code\combined_code\main.asm</FILE><LINE>83</LINE></end_rot>
-  <rev_dir><FILE>D:\Documents\ee322_project\combined\combined_code\combined_code\main.asm</FILE><LINE>73</LINE></rev_dir>
-  <rev_to_pos><FILE>D:\Documents\ee322_project\combined\combined_code\combined_code\main.asm</FILE><LINE>79</LINE></rev_to_pos>
-  <rot_neg><FILE>D:\Documents\ee322_project\combined\combined_code\combined_code\main.asm</FILE><LINE>94</LINE></rot_neg>
-  <rot_pos><FILE>D:\Documents\ee322_project\combined\combined_code\combined_code\main.asm</FILE><LINE>87</LINE></rot_pos>
-  <l2><FILE>D:\Documents\ee322_project\combined\combined_code\combined_code\main.asm</FILE><LINE>108</LINE></l2>
-  <delay_timer0><FILE>D:\Documents\ee322_project\combined\combined_code\combined_code\main.asm</FILE><LINE>123</LINE></delay_timer0>
-  <delay_20ms><FILE>D:\Documents\ee322_project\combined\combined_code\combined_code\main.asm</FILE><LINE>143</LINE></delay_20ms>
-  <bak><FILE>D:\Documents\ee322_project\combined\combined_code\combined_code\main.asm</FILE><LINE>116</LINE></bak>
-  <delay_ms><FILE>D:\Documents\ee322_project\combined\combined_code\combined_code\main.asm</FILE><LINE>155</LINE></delay_ms>
-  <l3><FILE>D:\Documents\ee322_project\combined\combined_code\combined_code\main.asm</FILE><LINE>132</LINE></l3>
-  <l4><FILE>D:\Documents\ee322_project\combined\combined_code\combined_code\main.asm</FILE><LINE>145</LINE></l4>
-  <l5><FILE>D:\Documents\ee322_project\combined\combined_code\combined_code\main.asm</FILE><LINE>146</LINE></l5>
-  <l6><FILE>D:\Documents\ee322_project\combined\combined_code\combined_code\main.asm</FILE><LINE>147</LINE></l6>
-  <l7><FILE>D:\Documents\ee322_project\combined\combined_code\combined_code\main.asm</FILE><LINE>157</LINE></l7>
-  <l8><FILE>D:\Documents\ee322_project\combined\combined_code\combined_code\main.asm</FILE><LINE>158</LINE></l8>
-  <l9><FILE>D:\Documents\ee322_project\combined\combined_code\combined_code\main.asm</FILE><LINE>159</LINE></l9>
-  <lc><FILE>D:\Documents\ee322_project\combined\combined_code\combined_code\main.asm</FILE><LINE>176</LINE></lc>
+  <again><FILE>D:\Documents\ee322_project\combined\combined_code\combined_code\main.asm</FILE><LINE>23</LINE></again>
+  <rotate><FILE>D:\Documents\ee322_project\combined\combined_code\combined_code\main.asm</FILE><LINE>28</LINE></rotate>
+  <rotate_servo><FILE>D:\Documents\ee322_project\combined\combined_code\combined_code\main.asm</FILE><LINE>135</LINE></rotate_servo>
+  <loop><FILE>D:\Documents\ee322_project\combined\combined_code\combined_code\main.asm</FILE><LINE>33</LINE></loop>
+  <delay_timer1><FILE>D:\Documents\ee322_project\combined\combined_code\combined_code\main.asm</FILE><LINE>197</LINE></delay_timer1>
+  <echo_PW><FILE>D:\Documents\ee322_project\combined\combined_code\combined_code\main.asm</FILE><LINE>40</LINE></echo_PW>
+  <neg_det><FILE>D:\Documents\ee322_project\combined\combined_code\combined_code\main.asm</FILE><LINE>59</LINE></neg_det>
+  <pos_det><FILE>D:\Documents\ee322_project\combined\combined_code\combined_code\main.asm</FILE><LINE>47</LINE></pos_det>
+  <end_rot><FILE>D:\Documents\ee322_project\combined\combined_code\combined_code\main.asm</FILE><LINE>111</LINE></end_rot>
+  <calc_val><FILE>D:\Documents\ee322_project\combined\combined_code\combined_code\main.asm</FILE><LINE>75</LINE></calc_val>
+  <d8u_1><FILE>D:\Documents\ee322_project\combined\combined_code\combined_code\main.asm</FILE><LINE>79</LINE></d8u_1>
+  <d8u_2><FILE>D:\Documents\ee322_project\combined\combined_code\combined_code\main.asm</FILE><LINE>84</LINE></d8u_2>
+  <out_val><FILE>D:\Documents\ee322_project\combined\combined_code\combined_code\main.asm</FILE><LINE>95</LINE></out_val>
+  <d8u_3><FILE>D:\Documents\ee322_project\combined\combined_code\combined_code\main.asm</FILE><LINE>91</LINE></d8u_3>
+  <delay_20ms><FILE>D:\Documents\ee322_project\combined\combined_code\combined_code\main.asm</FILE><LINE>173</LINE></delay_20ms>
+  <rev_dir><FILE>D:\Documents\ee322_project\combined\combined_code\combined_code\main.asm</FILE><LINE>101</LINE></rev_dir>
+  <rev_to_pos><FILE>D:\Documents\ee322_project\combined\combined_code\combined_code\main.asm</FILE><LINE>107</LINE></rev_to_pos>
+  <rot_neg><FILE>D:\Documents\ee322_project\combined\combined_code\combined_code\main.asm</FILE><LINE>124</LINE></rot_neg>
+  <rot_pos><FILE>D:\Documents\ee322_project\combined\combined_code\combined_code\main.asm</FILE><LINE>115</LINE></rot_pos>
+  <ret_rotate><FILE>D:\Documents\ee322_project\combined\combined_code\combined_code\main.asm</FILE><LINE>118</LINE></ret_rotate>
+  <l2><FILE>D:\Documents\ee322_project\combined\combined_code\combined_code\main.asm</FILE><LINE>138</LINE></l2>
+  <delay_timer0><FILE>D:\Documents\ee322_project\combined\combined_code\combined_code\main.asm</FILE><LINE>153</LINE></delay_timer0>
+  <bak><FILE>D:\Documents\ee322_project\combined\combined_code\combined_code\main.asm</FILE><LINE>146</LINE></bak>
+  <delay_ms><FILE>D:\Documents\ee322_project\combined\combined_code\combined_code\main.asm</FILE><LINE>185</LINE></delay_ms>
+  <l3><FILE>D:\Documents\ee322_project\combined\combined_code\combined_code\main.asm</FILE><LINE>162</LINE></l3>
+  <l4><FILE>D:\Documents\ee322_project\combined\combined_code\combined_code\main.asm</FILE><LINE>175</LINE></l4>
+  <l5><FILE>D:\Documents\ee322_project\combined\combined_code\combined_code\main.asm</FILE><LINE>176</LINE></l5>
+  <l6><FILE>D:\Documents\ee322_project\combined\combined_code\combined_code\main.asm</FILE><LINE>177</LINE></l6>
+  <l7><FILE>D:\Documents\ee322_project\combined\combined_code\combined_code\main.asm</FILE><LINE>187</LINE></l7>
+  <l8><FILE>D:\Documents\ee322_project\combined\combined_code\combined_code\main.asm</FILE><LINE>188</LINE></l8>
+  <l9><FILE>D:\Documents\ee322_project\combined\combined_code\combined_code\main.asm</FILE><LINE>189</LINE></l9>
+  <lc><FILE>D:\Documents\ee322_project\combined\combined_code\combined_code\main.asm</FILE><LINE>206</LINE></lc>
  </LABELS>
 </ASSEMBLER_INFO>
