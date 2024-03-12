@@ -1,5 +1,5 @@
 
-AVRASM ver. 2.2.8  D:\Documents\ee322_project\combined\combined_code\combined_code\main.asm Tue Mar 12 03:48:29 2024
+AVRASM ver. 2.2.8  D:\Documents\ee322_project\combined\combined_code\combined_code\main.asm Tue Mar 12 05:48:23 2024
 
 
 EQU  SIGNATURE_000 0000001e
@@ -695,5 +695,31 @@ EQU  ACIaddr      0000002e
 EQU  TWIaddr      00000030
 EQU  SPMRaddr     00000032
 EQU  INT_VECTORS_SIZE 00000034
-CSEG setup        00000000
-CSEG loop         00000002
+CSEG rotate_pos   00000000
+CSEG setup        00000004
+CSEG again        00000009
+CSEG rotate       0000000c
+CSEG rotate_servo 0000003e
+CSEG loop         0000000f
+CSEG delay_timer1 00000069
+CSEG echo_PW      00000013
+CSEG neg_det      00000022
+CSEG pos_det      00000018
+CSEG end_rot      00000035
+CSEG rev_dir      0000002f
+CSEG rev_to_pos   00000033
+CSEG rot_neg      0000003a
+CSEG rot_pos      00000037
+CSEG l2           0000003f
+CSEG delay_timer0 00000047
+CSEG delay_20ms   00000055
+CSEG bak          00000045
+CSEG delay_ms     0000005f
+CSEG l3           0000004d
+CSEG l4           00000056
+CSEG l5           00000057
+CSEG l6           00000058
+CSEG l7           00000060
+CSEG l8           00000061
+CSEG l9           00000062
+CSEG lc           0000006f
